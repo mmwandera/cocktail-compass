@@ -49,26 +49,6 @@ input[type="text"] {
     margin-bottom: 10px; 
 }
 
-.comment-section input::placeholder,
-.comment-section textarea::placeholder {
-    color: #BABABA;
-    font-family: 'DM Sans', sans-serif;
-}
-
-.comment-section input,
-.comment-section textarea {
-    display: block;
-    margin-bottom: 10px; 
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #FE633D; 
-    border-radius: 5px;
-}
-
-.comment-section textarea {
-    min-height: 100px; 
-}
-
 button {
     font-family: 'DM Sans', sans-serif;
     background-color: #FE633D; 
