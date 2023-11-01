@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Cocktail App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="logo">
+                <!-- CocktailCompass Logo -->
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+            <p class="or-text">OR</p>
+            <button class="randomize-button">Randomize</button>
+            <p class="or-text">OR</p>
+            <div class="popular-cocktails">
+                <!-- List of popular cocktails appended dynamically -->
+                <ul id = "cocktail-list">
+
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <h2 class="cocktail-name">Cocktail Name</h2>
+            <div class="cocktail-image">
+                <!-- Image of the cocktail -->
+            </div>
+            <h3 class="ingredients-heading">Ingredients</h3>
+            <div class="ingredients">
+                <!-- Ingredient cards appended dynamically -->
+            </div>
+            <h3 class="instructions-heading">Instructions</h3>
+            <p class="instructions-text">
+                <!-- Instructions fetched from the server -->
+            </p>
+            <h3 class="comments-heading">Comments</h3>
+            <div class="comment-section">
+                <input type="text" placeholder="Name">
+                <textarea placeholder="Your comment..."></textarea>
+                <button class="post-comment-button">Post Comment</button>
+                <!-- Comments appended dynamically -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
