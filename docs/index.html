@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <title>Cocktail App</title>
+    <title>Cocktail Compass</title>
 </head>
 <body>
     <div class="container">
+        <div class="logo">
+            <!-- Cocktail Compass Logo -->
+            <img src="./assets/cocktail-compass-high-resolution-logo-transparent.png" alt="Logo">
+        </div>
+    </div>
+    <div class="grid-container">
         <div class="left">
-            <div class="logo">
-                <!-- CocktailCompass Logo -->
-            </div>
             <div class="search">
-                <input type="text" placeholder="Search...">
+                <input type="text" placeholder="Search cocktail by name">
                 <button>Search</button>
             </div>
-            <p class="or-text">OR</p>
+            <p class="or-text">or</p>
             <button class="randomize-button">Randomize</button>
-            <p class="or-text">OR</p>
+            <p class="or-text">or</p>
+            <p class="popular-cocktails-text">List of Popular Cocktails</p>
             <div class="popular-cocktails">
                 <!-- List of popular cocktails appended dynamically -->
-                <ul id = "cocktail-list">
-
-                </ul>
+                <ul id="cocktail-list"></ul>
             </div>
         </div>
         <div class="right">
@@ -41,7 +45,7 @@
             </p>
             <h3 class="comments-heading">Comments</h3>
             <div class="comment-section">
-                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Enter name">
                 <textarea placeholder="Your comment..."></textarea>
                 <button class="post-comment-button">Post Comment</button>
                 <!-- Comments appended dynamically -->
