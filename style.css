@@ -32,8 +32,12 @@ body {
     height: auto; 
 }
 
-h2, h3, .popular-cocktails-text {
+h2, h3, .popular-cocktails-text, .latest-cocktails-text {
     font-family: 'Unica One', sans-serif;
+}
+
+.popular-cocktails-text, .latest-cocktails-text{
+    font-size: 1.2em;
 }
 
 input::placeholder {
