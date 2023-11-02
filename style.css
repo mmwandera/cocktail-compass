@@ -79,3 +79,24 @@ button:hover {
     width: 300px;
 }
 
+/* -----SCROLLBAR----- */
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #FE633D; /* Orange color */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF4500; /* Darker shade of orange on hover */
+  }
+  

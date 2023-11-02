@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded' , function(){
                     <h2 class="cocktail-name">${data.drinks[0].strDrink}</h2>
                     <div class="cocktail-image">
                         <!-- Image of the cocktail -->
-                        <img src="${data.drinks[0].strDrinkThumb}" style ="height:300px; width=300px" />
+                        <img src="${data.drinks[0].strDrinkThumb}" style ="height:300px; width=300px; object-fit: contain; " />
                     </div>
                     <h3 class="ingredients-heading">Ingredients</h3>
                     <div class="ingredients">
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded' , function(){
     }
     
     // displays initial drink
-    fetchAndDisplayDrinkDetails(17188);
+    fetchAndDisplayDrinkDetails(17241);
     
 
     // appends popular drinks
@@ -123,7 +123,9 @@ document.addEventListener('DOMContentLoaded' , function(){
         fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
             .then(response => response.json())
             .then(data => {
-                // console.log(data);
+
+                console.log(data);
+
                 let ingredientsList = '';
     
                 for (let i = 1; i <= 15; i++) {
