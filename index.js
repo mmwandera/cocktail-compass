@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded' , function(){
     const latestDrinksList = document.getElementById('latest-cocktail-list');
     const drinkDetails = document.querySelector('.right');
 
-
-    let currentDrinkId = 1;
-
+    // displays drink details on the right side
     function fetchAndDisplayDrinkDetails(id) {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
             .then(response => response.json())
@@ -29,7 +27,7 @@ document.addEventListener('DOMContentLoaded' , function(){
                     <h2 class="cocktail-name">${data.drinks[0].strDrink}</h2>
                     <div class="cocktail-image">
                         <!-- Image of the cocktail -->
-                        <img src="${data.drinks[0].strDrinkThumb}" style="height:300px; width=300px" />
+                        <img src="${data.drinks[0].strDrinkThumb}" style ="height:300px; width=300px" />
                     </div>
                     <h3 class="ingredients-heading">Ingredients</h3>
                     <div class="ingredients">
@@ -56,11 +54,11 @@ document.addEventListener('DOMContentLoaded' , function(){
     
     }
     
-    // display initial drink
+    // displays initial drink
     fetchAndDisplayDrinkDetails(17188);
     
 
-    
+    // appends popular drinks
     function fetchPopularDrinkList(idArray){
         idArray.forEach(function(id){
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -74,6 +72,11 @@ document.addEventListener('DOMContentLoaded' , function(){
                 const li = document.createElement('li');
                 li.textContent = data.drinks[0].strDrink
                 popularDrinksList.appendChild(li);
+
+                let currentId = data.drinks[0].idDrink
+                li.addEventListener('click', () =>{
+                    fetchAndDisplayDrinkDetails(currentId)
+                })
             })
             .catch(error => console.log('Error fetching data:', error));
 
@@ -84,7 +87,7 @@ document.addEventListener('DOMContentLoaded' , function(){
     const popularDrinksIdArray = [11000,11001,11002,11003,11004,11005,11006,11007]
     fetchPopularDrinkList(popularDrinksIdArray)
 
-
+    // appends latest drinks
     function fetchLatestDrinkList(idArray){
         idArray.forEach(function(id){
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -99,9 +102,9 @@ document.addEventListener('DOMContentLoaded' , function(){
                 li.textContent = data.drinks[0].strDrink
                 latestDrinksList.appendChild(li);
 
-                li.addEventListener('click', () => {
-                    currentDrinkId = data.drinks[0].drinkId;
-                    displayDrinkDetails(currentDrinkId);
+                let currentId = data.drinks[0].idDrink
+                li.addEventListener('click', () =>{
+                    fetchAndDisplayDrinkDetails(currentId)
                 })
             })
             .catch(error => console.log('Error fetching data:', error));
@@ -114,7 +117,7 @@ document.addEventListener('DOMContentLoaded' , function(){
     fetchLatestDrinkList(latestDrinksIdArray)
 
     // Search functionality
-    
+
 
 })
    
