@@ -39,14 +39,15 @@ document.addEventListener('DOMContentLoaded' , function(){
                     <h3 class="instructions-heading">Instructions</h3>
                     <p class="instructions-text">
                         <!-- Instructions fetched from the server -->
-                        <p>${data.drinks[0].strInstructions}</p>
+                        ${data.drinks[0].strInstructions}
                     </p>
                     <h3 class="glass-heading">Glass</h3>
                     <p class="glass-text">
                         <!-- Glass fetched from the server -->
-                        <p>${data.drinks[0].strGlass}</p>
+                        ${data.drinks[0].strGlass}
                     </p>
                     `;
+
             })
             .catch(error => {
                 console.log('Error fetching data:', error);

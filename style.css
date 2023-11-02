@@ -68,3 +68,14 @@ button {
 button:hover {
     background-color: #FF4500; 
 }
+
+/* .ingredients{
+    width:300px;
+    height: auto;
+} */
+
+.instructions-text{
+    display: block;
+    width: 300px;
+}
+
