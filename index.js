@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded' , function(){
     const latestDrinksList = document.getElementById('latest-cocktail-list');
     const drinkDetails = document.querySelector('.right');
     const cocktailRoulette = document.querySelector('.randomize-button');
+    const searchInput = document.querySelector('input[type="text"]');
+    const searchButton = document.querySelector('button');
+    const searchResults = document.querySelector('#results');
 
     // displays drink details on the right side
     function fetchAndDisplayDrinkDetails(id) {
@@ -72,7 +75,7 @@ document.addEventListener('DOMContentLoaded' , function(){
                 // console.log(data.drinks[0].strDrink)
 
                 const li = document.createElement('li');
-                li.textContent = data.drinks[0].strDrink
+                li.textContent = data.drinks[0].strDrink;
                 popularDrinksList.appendChild(li);
 
                 let currentId = data.drinks[0].idDrink
@@ -124,7 +127,7 @@ document.addEventListener('DOMContentLoaded' , function(){
             .then(response => response.json())
             .then(data => {
 
-                console.log(data);
+                // console.log(data);
 
                 let ingredientsList = '';
     
@@ -165,8 +168,31 @@ document.addEventListener('DOMContentLoaded' , function(){
             })
             .catch(error => console.error('Error fetching data:', error));
     });
+
+    // Search Functionality
+    searchButton.addEventListener('click', () => {
+        const cocktailName = searchInput.value;
+        
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`)
+            .then(response => response.json())
+            .then(data => {
+                data.drinks.forEach(drink => {
+                    
+                    // console.log(drink);
+                    
+                    const li = document.createElement('li');
+                    li.textContent = drink.strDrink;
+                    
+                    // console.log(li);
+                    searchResults.appendChild(li);
+                
+                });
+                
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+            
+    });
     
-
-
 })
    
