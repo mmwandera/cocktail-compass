@@ -170,29 +170,33 @@ document.addEventListener('DOMContentLoaded' , function(){
     });
 
     // Search Functionality
+    // Search Functionality
     searchButton.addEventListener('click', () => {
         const cocktailName = searchInput.value;
-        
+        searchResults.innerHTML = ''; // Clear the existing search results
+
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`)
             .then(response => response.json())
             .then(data => {
                 data.drinks.forEach(drink => {
-                    
-                    // console.log(drink);
-                    
+
+                    // console.log(drink)
+
                     const li = document.createElement('li');
                     li.textContent = drink.strDrink;
-                    
-                    // console.log(li);
                     searchResults.appendChild(li);
-                
+
+                    // console.log (drink.idDrink)
+
+                    let currentId = drink.idDrink
+                    li.addEventListener('click', () =>{
+                    fetchAndDisplayDrinkDetails(currentId)
+                })
                 });
-                
             })
             .catch(error => console.error('Error fetching data:', error));
-
-            
     });
+
     
 })
    
