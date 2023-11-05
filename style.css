@@ -83,20 +83,59 @@ button:hover {
 /* width */
 ::-webkit-scrollbar {
     width: 12px;
-  }
+}
   
   /* Track */
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: #f1f1f1;
-  }
+}
   
   /* Handle */
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #FE633D; /* Orange color */
-  }
+}
   
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: #FF4500; /* Darker shade of orange on hover */
-  }
+}
+  
+/* List Styling */
+#popular-cocktail-list,
+#latest-cocktail-list,
+#results {
+  list-style-type: none;
+  padding: 0;
+}
+
+#popular-cocktail-list li,
+#latest-cocktail-list li,
+#results li {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #FE633D;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#popular-cocktail-list li:hover,
+#latest-cocktail-list li:hover,
+#results li:hover {
+  background-color: #FF4500;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Styling image */
+.cocktail-image img {
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.cocktail-image img:hover {
+    transform: scale(1.1);
+}
+
+
+  
   
