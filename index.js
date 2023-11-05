@@ -170,29 +170,38 @@ document.addEventListener('DOMContentLoaded' , function(){
     });
 
     // Search Functionality
-    // Search Functionality
     searchButton.addEventListener('click', () => {
         const cocktailName = searchInput.value;
         searchResults.innerHTML = ''; // Clear the existing search results
 
+        if (cocktailName === '') {
+            alert('Please enter a cocktail name');
+            return;
+        }
+
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`)
             .then(response => response.json())
             .then(data => {
-                data.drinks.forEach(drink => {
+                if (data.drinks === null) {
+                    const noResults = document.createElement('p');
+                    noResults.textContent = `No results for "${cocktailName}"`;
+                    searchResults.appendChild(noResults);
+                } else {
+                    const searchHeading = document.createElement('p');
+                    searchHeading.textContent = `Search results for "${cocktailName}"`;
+                    searchResults.appendChild(searchHeading);
 
-                    // console.log(drink)
+                    data.drinks.forEach(drink => {
+                        const li = document.createElement('li');
+                        li.textContent = drink.strDrink;
+                        searchResults.appendChild(li);
 
-                    const li = document.createElement('li');
-                    li.textContent = drink.strDrink;
-                    searchResults.appendChild(li);
-
-                    // console.log (drink.idDrink)
-
-                    let currentId = drink.idDrink
-                    li.addEventListener('click', () =>{
-                    fetchAndDisplayDrinkDetails(currentId)
-                })
-                });
+                        let currentId = drink.idDrink;
+                        li.addEventListener('click', () => {
+                            fetchAndDisplayDrinkDetails(currentId);
+                        });
+                    });
+                }
             })
             .catch(error => console.error('Error fetching data:', error));
     });
