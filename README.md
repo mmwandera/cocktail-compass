@@ -1,15 +1,38 @@
-<h1>Cocktail Compass</h1>
+#Cocktail Compass
 
-<h2>Problem</h2>
-Cocktail enthusiasts and bartenders often struggle to find new and exciting cocktail recipes. The lack of a consolidated platform for accessing a wide variety of cocktail recipes along with their ingredients and preparation methods makes the process of discovering new cocktails cumbersome and time-consuming.
+## Author: Mark Wandera
 
-<h2>Solution</h2>
-To address this issue, we propose the development of a user-friendly single-page website, the Cocktail Finder. This website will utilize the CocktailsDB API to fetch a comprehensive database of cocktail recipes. The Cocktail Finder will provide a simple and efficient search functionality, allowing users to explore a diverse collection of cocktails based on their preferences. By displaying cocktail images, names, ingredients, and recipes, the platform will enable users to quickly and easily discover new cocktails to try. The responsive design of the website will ensure seamless accessibility across various devices, catering to a broad audience of cocktail enthusiasts and professionals. The Cocktail Finder will streamline the process of cocktail exploration, making it a convenient and valuable resource for users seeking to expand their mixology repertoire.
+Cocktail Compass is a web application that allows users to explore a wide variety of cocktail recipes. Users can search for specific cocktails, view popular and latest cocktails, and even get a random cocktail suggestion through the cocktail roulette feature.
 
-<h2>Features</h2>
-<ol>
-    <li>Search Functionality to allow users find cocktails.</li>
-    <li>Access Cocktail information including: Name, Image, Ingredients and Recipes.</li>
-    <li>Shows list of popular cocktails.</li>
-    <li>Randomize cocktail Feature which allows user to randomly access various cocktails.</li>
-</ol>
+## Features
+
+- Search for a cocktail by name
+- View popular and latest cocktails
+- Get a random cocktail suggestion
+- View cocktail details, including ingredients, instructions, and glassware
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+## Setup
+
+1. Clone the repository to your local machine.
+2. Open the `index.html` file in your web browser.
+
+## Usage
+
+- Enter the name of a cocktail in the search bar and click the "Search" button to view search results.
+- Click on a cocktail from the popular or latest cocktails list to view its details.
+- Click the "Cocktail Roulette" button to get a random cocktail suggestion.
+
+## Contributors
+
+[Mark Wandera] (https://github.com/mmwandera)
+
+## Acknowledgements
+
+This project uses the [TheCocktailDB API](https://www.thecocktaildb.com/) for fetching cocktail data.
+
