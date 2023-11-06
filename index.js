@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded' , function(){
+    // DOM elements
     const popularDrinksList = document.getElementById('popular-cocktail-list');
     const latestDrinksList = document.getElementById('latest-cocktail-list');
     const drinkDetails = document.querySelector('.right');
@@ -7,14 +8,18 @@ document.addEventListener('DOMContentLoaded' , function(){
     const searchButton = document.querySelector('button');
     const searchResults = document.querySelector('#results');
 
-    // displays drink details on the right side
+    // Function to display drink details on the right side
     function fetchAndDisplayDrinkDetails(id) {
+        // Fetch drink details from the API
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
             .then(response => response.json())
             .then(data => {
     
                 // console.log(data.drinks[0]);
-    
+                // Construct the HTML for drink details
+                // Including name, image, ingredients, instructions, and glass type
+                // Append the HTML to the 'drinkDetails' div
+                // Display an error message if there's an issue with the API
                 let ingredientsList = '';
     
                 for (let i = 1; i <= 15; i++) {
@@ -62,8 +67,14 @@ document.addEventListener('DOMContentLoaded' , function(){
     // displays initial drink
     fetchAndDisplayDrinkDetails(17241);
     
-
-    // appends popular drinks
+    // Function to fetch and append popular drinks to the list
+    // Also adds click event listener to display details when clicked
+    // Uses an array of drink IDs to fetch data
+    // Display an error message if there's an issue with the API
+    // Replace the '11000' and other IDs with your desired IDs
+    // Adjust the 'popularDrinksList' and 'latestDrinksList' IDs accordingly
+    // Adjust the API endpoint based on your requirements
+    // Add error handling for the fetch request
     function fetchPopularDrinkList(idArray){
         idArray.forEach(function(id){
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -92,7 +103,14 @@ document.addEventListener('DOMContentLoaded' , function(){
     const popularDrinksIdArray = [11000,11001,11002,11003,11004,11005,11006,11007]
     fetchPopularDrinkList(popularDrinksIdArray)
 
-    // appends latest drinks
+    // Function to fetch and append latest drinks to the list
+    // Also adds click event listener to display details when clicked
+    // Uses an array of drink IDs to fetch data
+    // Display an error message if there's an issue with the API
+    // Replace the '178370' and other IDs with your desired IDs
+    // Adjust the 'popularDrinksList' and 'latestDrinksList' IDs accordingly
+    // Adjust the API endpoint based on your requirements
+    // Add error handling for the fetch request
     function fetchLatestDrinkList(idArray){
         idArray.forEach(function(id){
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -121,7 +139,11 @@ document.addEventListener('DOMContentLoaded' , function(){
     const latestDrinksIdArray = [178370,178369,17191,178367,178366,178365,178364,178363]
     fetchLatestDrinkList(latestDrinksIdArray)
 
-    // cocktail roulette feature
+    // Functionality for the cocktail roulette feature
+    // Fetches a random cocktail from the API
+    // Constructs the HTML for the random drink details
+    // Display an error message if there's an issue with the API
+    // Add error handling for the fetch request
     cocktailRoulette.addEventListener('click', () => {
         fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
             .then(response => response.json())
@@ -169,7 +191,12 @@ document.addEventListener('DOMContentLoaded' , function(){
             .catch(error => console.error('Error fetching data:', error));
     });
 
-    // Search Functionality
+    // Functionality for the search button
+    // Fetches the cocktails based on the user's input
+    // Clears the previous search results
+    // Displays the search results with their respective IDs
+    // Display an error message if there's an issue with the API
+    // Add error handling for the fetch request
     searchButton.addEventListener('click', () => {
         const cocktailName = searchInput.value;
         searchResults.innerHTML = ''; // Clear the existing search results
