@@ -1,3 +1,4 @@
+/* Customize the body */
 body {
     background-color: #121212;
     color: #FFFFFF;
@@ -7,10 +8,12 @@ body {
     align-items: center;
 }
 
+/* Styling for the container */
 .container {
     margin-top: 100px;
 }
 
+/* Styling for the grid container */
 .grid-container {
     display: flex;
     justify-content: center;
@@ -20,33 +23,40 @@ body {
     /* width: 50%; */
 }
 
+/* Styling for the left section */
 .left {
-    margin-right: 40px; /*try 100px*/
+    margin-right: 40px; 
     flex-grow: 1;
 }
 
+/* Styling for the right section */
 .right {
     flex-grow: 1;
 }
 
+/* Styling for the logo image */
 .logo img {
     width: 250px; 
     height: auto; 
 }
 
+/* Styling for headings and text */
 h2, h3, .popular-cocktails-text, .latest-cocktails-text {
     font-family: 'Unica One', sans-serif;
 }
 
+/* Styling for text size */
 .popular-cocktails-text, .latest-cocktails-text{
     font-size: 1.2em;
 }
 
+/* Styling for input placeholder */
 input::placeholder {
     color: #BABABA;
     font-family: 'DM Sans', sans-serif;
 }
 
+/* Styling for the input field */
 input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -55,6 +65,7 @@ input[type="text"] {
     margin-bottom: 10px; 
 }
 
+/* Styling for buttons */
 button {
     font-family: 'DM Sans', sans-serif;
     background-color: #FE633D; 
@@ -65,6 +76,7 @@ button {
     cursor: pointer;
 }
 
+/* Styling for button hover effect */
 button:hover {
     background-color: #FF4500; 
 }
@@ -74,11 +86,13 @@ button:hover {
     height: auto;
 } */
 
+/* Styling for instruction text */
 .instructions-text{
     display: block;
     width: 300px;
 }
 
+/* Styling for the scrollbar */
 /* -----SCROLLBAR----- */
 /* width */
 ::-webkit-scrollbar {
@@ -108,6 +122,7 @@ button:hover {
   padding: 0;
 }
 
+/* Styling for list items */
 #popular-cocktail-list li,
 #latest-cocktail-list li,
 #results li {
@@ -118,6 +133,7 @@ button:hover {
   cursor: pointer;
 }
 
+/* Styling for list item hover effect */
 #popular-cocktail-list li:hover,
 #latest-cocktail-list li:hover,
 #results li:hover {
@@ -126,12 +142,13 @@ button:hover {
   cursor: pointer;
 }
 
-/* Styling image */
+/* Styling for the cocktail image */
 .cocktail-image img {
     border-radius: 10px;
     transition: transform 0.3s;
 }
 
+/* Styling for the cocktail image hover effect */
 .cocktail-image img:hover {
     transform: scale(1.1);
 }
