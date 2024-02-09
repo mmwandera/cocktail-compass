@@ -189,5 +189,8 @@ button:hover {
     }
 }
 
-  
+.footer {
+    font-style: italic;
+    font-size: 12px;
+}  
   
